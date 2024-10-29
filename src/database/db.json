@@ -1,0 +1,10 @@
+{
+  "tasks": [],
+  "categories": [
+    { "id": 1, "name": "pessoal" },
+    { "id": 2, "name": "trabalho" },
+    { "id": 3, "name": "escola" },
+    { "id": 4, "name": "compras" },
+    { "id": 5, "name": "outras" }
+  ]
+}
