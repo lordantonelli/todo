@@ -1,0 +1,8 @@
+<mat-toolbar color="primary">
+  @if (isHandset$ | async) {
+  <button type="button" mat-icon-button (click)="drawer.toggle()">
+    <span class="material-icons">menu</span>
+  </button>
+  }
+  <span>Aplicativo de Tarefas</span>
+</mat-toolbar>

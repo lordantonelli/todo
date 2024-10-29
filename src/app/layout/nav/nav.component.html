@@ -1,0 +1,22 @@
+@if (isHandset$ | async) {
+<mat-toolbar class="title-nav">
+  <span>Menu</span>
+  <button type="button" mat-icon-button (click)="drawer.close()">
+    <span class="material-icons">close</span>
+  </button>
+</mat-toolbar>
+}
+
+<mat-nav-list class="mx-2">
+  @for (item of rootRoutes; track $index) {
+  <a
+    mat-list-item
+    [routerLink]="item.path"
+    #link="routerLinkActive"
+    routerLinkActive
+    [activated]="link.isActive"
+  >
+    {{ item.title }}
+  </a>
+  }
+</mat-nav-list>

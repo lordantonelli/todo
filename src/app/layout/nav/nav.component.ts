@@ -1,35 +1,34 @@
-import { Component, inject } from '@angular/core';
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
-import { FooterComponent } from './layout/footer/footer.component';
-import { HeaderComponent } from './layout/header/header.component';
-import { NavComponent } from './layout/nav/nav.component';
+import { Component, Input, inject } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { AsyncPipe } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { routes } from '../../app.routes';
 import { Observable, map, shareReplay } from 'rxjs';
-import { routes } from './app.routes';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-nav',
   standalone: true,
   imports: [
-    RouterOutlet,
-    FooterComponent,
-    HeaderComponent,
-    NavComponent,
     MatSidenavModule,
     MatToolbarModule,
     MatListModule,
     RouterLink,
     RouterLinkActive,
     AsyncPipe,
+    RouterOutlet,
+    MatButtonModule,
   ],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+  templateUrl: './nav.component.html',
+  styleUrl: './nav.component.scss',
 })
-export class AppComponent {
+export class NavComponent {
+  @Input({ required: true }) drawer!: MatSidenav;
+  rootRoutes = routes;
+
   private breakpointObserver = inject(BreakpointObserver);
   isHandset$: Observable<boolean> = this.breakpointObserver
     .observe(Breakpoints.Handset)
@@ -37,5 +36,4 @@ export class AppComponent {
       map((result) => result.matches),
       shareReplay()
     );
-  rootRoutes = routes;
 }
