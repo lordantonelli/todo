@@ -1,0 +1,13 @@
+.container-table {
+  margin-top: 2rem;
+  position: relative;
+
+  .search-input {
+    margin: 1rem 1rem 0;
+    width: calc(100% - 2rem);
+  }
+
+  table {
+    width: 100%;
+  }
+}

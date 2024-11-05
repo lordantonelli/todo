@@ -1,0 +1,41 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>
+          {{title}}
+        </mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content [formGroup]="form">
+      <mat-form-field appearance="outline" style="width: 100%;">
+        <mat-label>Descrição</mat-label>
+        <input matInput type="text" placeholder="Descrição" formControlName="description" />
+        @if(form.controls.description.hasError('required')) {
+          <mat-error>Campo é obrigatório</mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" style="width: 100%;">
+        <mat-label>Categoria</mat-label>
+        <mat-select placeholder="Categoria" formControlName="categoryId">
+          @for (category of categories; track category.id) {
+            <mat-option [value]="category.id">{{category.name}}</mat-option>
+          }
+        </mat-select>
+        @if(form.controls.categoryId.hasError('required')) {
+          <mat-error>Campo é obrigatório</mat-error>
+        }
+      </mat-form-field>
+
+      <mat-slide-toggle color="primary" formControlName="isActive"  labelPosition="before">
+          Status
+      </mat-slide-toggle>
+      {{status}}
+
+    </mat-card-content>
+
+    <mat-card-actions align="start">
+      <button mat-button color="primary" (click)="save()">Salvar</button>
+      <button mat-button routerLink="/tasks">Cancelar</button>
+    </mat-card-actions>
+
+</mat-card>

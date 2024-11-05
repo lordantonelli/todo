@@ -27,7 +27,8 @@ import { MatButtonModule } from '@angular/material/button';
 })
 export class NavComponent {
   @Input({ required: true }) drawer!: MatSidenav;
-  rootRoutes = routes;
+
+  rootRoutes = routes.filter((r) => r.title && r.data && r.data['showMenu']);
 
   private breakpointObserver = inject(BreakpointObserver);
   isHandset$: Observable<boolean> = this.breakpointObserver

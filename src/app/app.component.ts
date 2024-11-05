@@ -37,5 +37,4 @@ export class AppComponent {
       map((result) => result.matches),
       shareReplay()
     );
-  rootRoutes = routes;
 }

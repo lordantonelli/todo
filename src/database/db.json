@@ -1,10 +1,75 @@
 {
-  "tasks": [],
+  "tasks": [
+    {
+      "id": "5761",
+      "description": "Ir ao mercado",
+      "categoryId": "4",
+      "isActive": true,
+      "dateCreated": "2024-11-05T20:27:20.090Z"
+    },
+    {
+      "id": "8edb",
+      "description": "teste",
+      "categoryId": "2",
+      "isActive": true,
+      "dateCreated": "2024-11-05T21:36:54.158Z"
+    },
+    {
+      "id": "964d",
+      "description": "Ir ao mercado",
+      "categoryId": "4",
+      "isFinished": false,
+      "dateCreated": "2024-11-05T21:59:01.142Z"
+    },
+    {
+      "id": "bfe9",
+      "description": "Ir ao mercado",
+      "categoryId": "4",
+      "isFinished": false,
+      "dateCreated": "2024-11-05T22:06:21.341Z"
+    },
+    {
+      "id": "d8df",
+      "description": "Ir ao mercado",
+      "categoryId": "4",
+      "isFinished": false,
+      "dateCreated": "2024-11-05T22:07:11.467Z"
+    },
+    {
+      "id": "6ec5",
+      "description": "Ir ao mercado",
+      "categoryId": "4",
+      "isFinished": false,
+      "dateCreated": "2024-11-05T22:07:22.390Z"
+    },
+    {
+      "id": "0bf5",
+      "description": "Ir ao mercado",
+      "categoryId": "4",
+      "isFinished": false,
+      "dateCreated": "2024-11-05T22:08:38.789Z"
+    }
+  ],
   "categories": [
-    { "id": 1, "name": "pessoal" },
-    { "id": 2, "name": "trabalho" },
-    { "id": 3, "name": "escola" },
-    { "id": 4, "name": "compras" },
-    { "id": 5, "name": "outras" }
+    {
+      "id": "1",
+      "name": "pessoal"
+    },
+    {
+      "id": "2",
+      "name": "trabalho"
+    },
+    {
+      "id": "3",
+      "name": "escola"
+    },
+    {
+      "id": "4",
+      "name": "compras"
+    },
+    {
+      "id": "5",
+      "name": "outras"
+    }
   ]
 }
